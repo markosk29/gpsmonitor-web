@@ -1,0 +1,26 @@
+<div class="main">
+  <p>Start date:</p>
+  <input type="text" [(ngModel)]="startDate">
+  <br>
+  <p>End date:</p>
+  <input type="text" [(ngModel)]="endDate" style="margin-top: 5px;">
+  <br>
+  <button style="margin-top: 25px; margin-left: 55px;" (click)="search()">Search</button>
+</div>
+
+<table *ngIf="locations.length > 0">
+  <tr>
+    <td style="font-weight: bold; padding: 0 15px;">id</td>
+     <td style="font-weight: bold; padding: 0 15px;">latitude</td>
+     <td style="font-weight: bold; padding: 0 15px;">longitude</td>
+     <td style="font-weight: bold; padding: 0 15px;">device</td>
+     <td style="font-weight: bold; padding: 0 15px;">date</td>
+  </tr>
+  <tr *ngFor="let location of locations;">
+     <td style="padding: 0 15px;">{{location.id}}</td>
+     <td style="padding: 0 15px;">{{location.latitude}}</td>
+     <td style="padding: 0 15px;">{{location.longitude}}</td>
+     <td style="padding: 0 15px;">{{location.device}}</td>
+     <td style="padding: 0 15px;">{{location.creationDate}}</td>
+  </tr>
+</table>
